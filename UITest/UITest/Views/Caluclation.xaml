@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:binding="clr-namespace:UITest.ViewModel"
+             mc:Ignorable="d"
+             x:Class="UITest.Views.Caluclation">
+    <ContentPage.BindingContext>
+        <binding:CalculateViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Text="{Binding Num1}" Placeholder="Num01(Int32 Only)" FontSize="28" AutomationId="EntryNum01"/>
+            <Entry Text="{Binding Num2}" Placeholder="Num02(Double Only)" FontSize="28" AutomationId="EntryNum02"/>
+            <Button Text="+" Command="{Binding Plus}" FontSize="28" AutomationId="PlusButton"/>
+            <Button Text="-" Command="{Binding Minus}" FontSize="28" AutomationId="MinusButton"/>
+            <Button Text="×" Command="{Binding Multiply}" FontSize="28" AutomationId="MultiplyButton"/>
+            <Button Text="÷" Command="{Binding Divide}" FontSize="28" AutomationId="DivideButton"/>
+            <Label Text="{Binding Result}" Margin="20" FontSize="36" HorizontalTextAlignment="Center" AutomationId="LabelResult"/>
+            <Entry Placeholder="Test01" FontSize="28" AutomationId="EntryNum02"/>
+            <Entry Placeholder="Test02" FontSize="28" AutomationId="EntryNum02"/>
+            <Entry Placeholder="Test03" FontSize="28" AutomationId="EntryNum02"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
