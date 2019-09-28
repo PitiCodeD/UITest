@@ -86,6 +86,17 @@ namespace UITest.Test
         }
 
         [Test]
+        public void TestMinus(string num1, string num2, double result)
+        {
+            app.EnterText("EntryNum01", num1);
+            app.EnterText("EntryNum02", num2);
+            app.Tap("PlusButton");
+
+            var model = Double.Parse(app.Query("LabelResult").SingleOrDefault().Text);
+            Assert.AreEqual(model, result);
+        }
+
+        [Test]
         public void TestFuntion()
         {
             app.Repl();
